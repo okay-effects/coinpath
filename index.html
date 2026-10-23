@@ -43,6 +43,8 @@
       border-radius: 10px; background: var(--okay-surface); border: 1px solid var(--okay-border); }
     .okay-link[href="./"]:hover { border-color: var(--okay-accent); }
     body > header .brand { letter-spacing: 0.14em; }
+    body > header .bar { flex-wrap: wrap; }
+    body > header .guide { color: #ffffff; font-weight: 600; }
 
     /* WHILE IT SEARCHES: a screen with no actions is the program working (okay-ui's `working`) — a spinner where its
        actions would be */
@@ -61,7 +63,7 @@
   </style>
 </head>
 <body>
-  <header><div class="bar"><a class="brand" href="./" title="Back to the start">COINPATH</a><span class="tag">follow a payment in a blockchain</span></div></header>
+  <header><div class="bar"><a class="brand" href="./" title="Back to the start">COINPATH</a><span class="tag">follow a payment in a blockchain</span><a class="guide" href="guide.html">How to use</a></div></header>
   <div id="app"></div>
   <footer><div class="bar">
     Built on <a href="https://github.com/okay-effects" target="_blank" rel="noopener noreferrer">okay-effects</a> —

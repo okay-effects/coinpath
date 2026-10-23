@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How to use Coinpath</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22%3E%3Ccircle cx=%228%22 cy=%228%22 r=%227%22 fill=%22%230e7c66%22/%3E%3C/svg%3E">
+  <meta name="description" content="How to follow your payment with Coinpath: find your transaction, fill in the form, read the answer.">
+  <style>
+    /* THE GUIDE'S LOOK: the page's own — okay-ui's calm skin in Coinpath's green, its rules for the frame and the
+       text repeated here, since this page is static and runs no Scala */
+    :root { --fg: #16211d; --bg: #f4f7f6; --muted: #5b6b66; --surface: #ffffff; --border: #d5dfdb;
+      --accent: #0e7c66; --deep: #0b3d33; --font: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+      --mono: ui-monospace, "SF Mono", Menlo, monospace; --measure: 820px; }
+    html, body { background: var(--bg); color: var(--fg); margin: 0; font: 17px/1.6 var(--font); }
+    body { display: flex; flex-direction: column; min-height: 100vh; }
+    body > header { background: var(--deep); color: #fff; }
+    body > header .bar, body > footer .bar, main { max-width: var(--measure); margin: 0 auto; padding: 14px 16px;
+      box-sizing: border-box; }
+    body > header .bar { display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px; font-size: 15px; }
+    body > header .brand { font-weight: 800; letter-spacing: 0.14em; font-size: 18px; color: #fff;
+      text-decoration: none; }
+    body > header .tag { color: rgba(255, 255, 255, 0.7); }
+    body > header .guide { color: #fff; font-weight: 600; }
+    main { flex: 1; padding-top: 28px; padding-bottom: 40px; }
+    h1 { font-size: 2em; letter-spacing: -0.02em; line-height: 1.2; margin: 0 0 12px; }
+    h2 { font-size: 1.25em; margin: 36px 0 8px; }
+    h3 { font-size: 1.02em; margin: 20px 0 4px; }
+    p, li { max-width: 72ch; }
+    a { color: var(--accent); font-weight: 600; }
+    code { font-family: var(--mono); font-size: 0.9em; background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 1px 5px; overflow-wrap: anywhere; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 16px 20px;
+      margin: 14px 0; }
+    table { border-collapse: separate; border-spacing: 0; width: 100%; background: var(--surface);
+      border: 1px solid var(--border); border-radius: 12px; overflow: hidden; font-size: 0.95em; }
+    th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    th { background: #e9f1ee; font-size: 0.82em; text-transform: uppercase; letter-spacing: 0.05em;
+      color: var(--muted); }
+    tr:last-child td { border-bottom: 0; }
+    .lead { font-size: 1.1em; }
+    .muted { color: var(--muted); }
+    .start { display: inline-block; margin-top: 8px; padding: 12px 20px; border-radius: 10px; background: var(--accent);
+      color: #fff; text-decoration: none; }
+    body > footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 14px; }
+    body > footer .bar { padding: 18px 16px 32px; }
+    @media (max-width: 640px) { html, body { font-size: 16px; } h1 { font-size: 1.6em; } th, td { padding: 8px; } }
+  </style>
+</head>
+<body>
+  <header><div class="bar"><a class="brand" href="./" title="Back to the start">COINPATH</a><span class="tag">follow a payment in a blockchain</span><a class="guide" href="guide.html">How to use</a></div></header>
+  <main>
+    <h1>How to use Coinpath</h1>
+    <p class="lead">You sent money and it went somewhere you did not mean it to. Coinpath follows that payment
+      through the blockchain's public transfers, step by step, and says where it ended — for example at an
+      exchange, where it can sometimes still be stopped.</p>
+    <p class="muted">It does not get money back, and it does not say who anyone is: it names exchanges and services
+      from their own published lists, and addresses on a public sanctions list. Everything it shows can be checked on
+      the chain.</p>
+    <a class="start" href="./">Start</a>
+
+    <h2>1 · Find your transaction</h2>
+    <p>Every payment has a <strong>transaction hash</strong> (also called a transaction ID, or TxID): a long code
+      that names that one payment on the chain.</p>
+    <ul>
+      <li><strong>In your wallet</strong> (MetaMask, Trust Wallet, TronLink, Ledger Live and others): open your
+        history or activity, open the payment, and look for “Transaction ID”, “TxID” or “Hash”. Copy it.</li>
+      <li><strong>In an exchange</strong> you sent from: open your withdrawal history, open the withdrawal, and copy
+        its “TxID”.</li>
+      <li><strong>If you only have the address</strong> you sent to (the scammer's, say): paste the address instead.
+        Coinpath lists the payments into it, newest first, and you pick yours.</li>
+    </ul>
+    <p class="muted">What a hash looks like: on Ethereum and the other EVM chains <code>0x</code> and 64 letters and
+      digits; on Bitcoin and Tron, 64 letters and digits with no <code>0x</code>.</p>
+
+    <h2>2 · The form, field by field</h2>
+    <h3>Chain</h3>
+    <p>The network you sent on. For a Bitcoin address (starting <code>bc1</code>, <code>1</code> or <code>3</code>)
+      or a Tron address (starting <code>T</code>) the page knows the chain by itself. For anything starting
+      <code>0x</code> it cannot tell Ethereum from Base, Arbitrum, Optimism, Polygon or World Chain: pick the one
+      you sent on. For a 64-character hash with no <code>0x</code>, pick Bitcoin or Tron.</p>
+    <h3>Transaction hash or address</h3>
+    <p>Paste the hash of your payment, or the address you paid. The page says what it recognised on the next
+      screen; if what you pasted matches no format, it says so under the field.</p>
+    <h3>Follow</h3>
+    <p>Which money to follow. <strong>Usual</strong> follows USDT on Tron and the chain's own coin everywhere else
+      (ETH, BTC, POL). Choose <strong>The coin</strong> or <strong>USDT</strong> when that is what you sent — for
+      example, USDT on Ethereum, or TRX on Tron.</p>
+    <h3>Method</h3>
+    <p>When your money arrives at an address that already holds other money, and that address then sends some on,
+      how much of what it sent was yours? Nobody can know; each method is a rule, and the answer says which one it
+      used. <strong>FIFO</strong> is the default. If in doubt, trace again with another — the answer has a button
+      for each.</p>
+    <p>Say your 1 ETH arrives at an address that already holds 3 ETH, and it then sends 2 ETH:</p>
+    <table>
+      <tr><th>Method</th><th>The rule</th><th>Of the 2 ETH sent, yours</th></tr>
+      <tr><td>FIFO</td><td>First in, first out: money leaves in the order it came.</td><td>0 ETH — the 3 ETH that
+        was there first leaves first</td></tr>
+      <tr><td>Haircut</td><td>Every send carries your share of what the address holds.</td><td>0.5 ETH — your
+        share is 1 of 4</td></tr>
+      <tr><td>Poison</td><td>Everything the address sends after your money arrived counts as yours.</td><td>2
+        ETH — the widest net</td></tr>
+    </table>
+
+    <h2>3 · Reading the answer</h2>
+    <ul>
+      <li><strong>“Of your … sent in … on …”</strong> — the first line: where your amount went, in parts. Each part
+        is where some of it ended:
+        <ul>
+          <li><strong>reached</strong> an exchange or a service, named with where its name comes from (an
+            exchange's own published list of its wallets), or a well-known contract — a mixer such as Tornado Cash,
+            a cross-chain swap, a DEX router;</li>
+          <li><strong>went into</strong> a bridge to another chain;</li>
+          <li><strong>is still at</strong> an address that has not sent it on.</li>
+        </ul>
+      </li>
+      <li><strong>Small transfers</strong> — each under 1% of what reached its sender — are shown, not followed;
+        the first line gives their sum.</li>
+      <li><strong>Not followed past … (hop limit, budget)</strong> and <strong>not accounted for</strong> — the
+        page follows at most 4 steps and reads at most 60 addresses, only the first pages of a busy address, and
+        each address once. What lies beyond those limits is said, not guessed.</li>
+      <li><strong>Sanctions</strong> — an address on OFAC's sanctions list (SDN) on the path is marked, its entry
+        linked. That is information from a public list, not a compliance decision.</li>
+      <li><strong>Pinned at block N</strong> — the answer is as of that block, when it was read. Later transfers
+        are not in it; save the trace to keep this exact answer.</li>
+      <li><strong>The addresses</strong> and <strong>the transfers</strong> — every step, with why it was or was
+        not followed.</li>
+    </ul>
+
+    <h2>4 · What to do next</h2>
+    <ul>
+      <li><strong>Save the trace</strong> — the button under the answer gives you a file. It opens again here
+        (“Open a saved trace”), the same answer, with no request to anyone.</li>
+      <li><strong>If it reached an exchange</strong>, write to that exchange's compliance or support team at once:
+        your transaction, the steps to their address, and the saved file. Exchanges can freeze funds still in their
+        hands, and time matters.</li>
+      <li><strong>Report it to the police</strong>, and give them the saved file.</li>
+    </ul>
+
+    <h2>5 · Privacy</h2>
+    <p>This page runs in your browser. It asks the public explorers of the chain you chose (Blockscout, Esplora,
+      TronGrid) about your transaction and the addresses it follows; nothing else of ours sits in between. The
+      names of addresses come as static files, asked by a short code computed from the address, so the address
+      itself is not sent for them. Nothing is kept unless you save a file.</p>
+
+    <p><a class="start" href="./">Start</a></p>
+  </main>
+  <footer><div class="bar">
+    Built on <a href="https://github.com/okay-effects" target="_blank" rel="noopener noreferrer">okay-effects</a> —
+    algebraic effects for Scala
+  </div></footer>
+</body>
+</html>
