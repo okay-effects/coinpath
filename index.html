@@ -15,6 +15,10 @@
       grid-template-columns: minmax(150px, 1fr) 3fr minmax(150px, 1fr); }
     form[data-action="follow"] input { font-family: ui-monospace, "SF Mono", Menlo, monospace; }
 
+    /* the foot: who built it on the left, "Need more?" (the author, for more than the page does) on the right */
+    body > footer .bar { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px; }
+    body > footer .more { margin-left: auto; }
+
     /* THE FORM SCREEN'S ORDER: the form first, then the examples with their title on a line of their own, then how
        it works — the same parts the program gives, placed by the page */
     .okay-face > div:has(form[data-action="follow"]) { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -62,6 +66,7 @@
   <footer><div class="bar">
     Built on <a href="https://github.com/okay-effects" target="_blank" rel="noopener noreferrer">okay-effects</a> —
     algebraic effects for Scala
+    <a class="more" href="https://okay-effects.github.io/#author" target="_blank" rel="noopener noreferrer">Need more?</a>
   </div></footer>
   <!-- the page, linked by Scala.js: `sbt appJS/web` puts main.js, labels/ and examples/ here -->
   <script src="main.js"></script>
