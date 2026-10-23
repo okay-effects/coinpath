@@ -1,1 +1,1 @@
-{"source":"https://sanctionslistservice.ofac.treas.gov/api/PublicationPreview/exports/SDN.XML","published":"2026-10-21","prefix":1,"chains":{"arbitrum":1,"bitcoin":532,"ethereum":124,"tron":340}}
+{"source":"https://sanctionslistservice.ofac.treas.gov/api/PublicationPreview/exports/SDN.XML","published":"2026-10-21","prefix":1,"chains":{"arbitrum":1,"base":0,"bitcoin":532,"ethereum":124,"optimism":0,"polygon":0,"tron":340,"worldchain":0}}
