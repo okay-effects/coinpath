@@ -1,1 +1,1 @@
-{"source":"labels.tsv","prefix":2,"chains":{"arbitrum":28262,"base":28660,"ethereum":28134,"optimism":28241,"polygon":28279,"worldchain":28135}}
+{"source":"labels.tsv","prefix":{"arbitrum":2,"base":2,"bitcoin":2,"ethereum":2,"optimism":2,"polygon":2,"tron":3,"worldchain":2},"chains":{"arbitrum":160,"base":552,"bitcoin":8840,"ethereum":28134,"optimism":126,"polygon":167,"tron":390605,"worldchain":1}}
