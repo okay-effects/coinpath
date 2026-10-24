@@ -40,6 +40,7 @@
     tr:last-child td { border-bottom: 0; }
     .lead { font-size: 1.1em; }
     .muted { color: var(--muted); }
+    .warn { border-left: 4px solid #b54708; background: color-mix(in srgb, #b54708 8%, transparent); padding: 4px 14px; border-radius: 6px; }
     .start { display: inline-block; margin-top: 8px; padding: 12px 20px; border-radius: 10px; background: var(--accent);
       color: #fff; text-decoration: none; }
     body > footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 14px; }
@@ -128,6 +129,13 @@
         signed an approval or a "permit" on a fake site), the answer says so first: who sent that transaction, the
         contract it called, the spender your approval named, and anything else it took from you. Give your own
         address and such transfers are listed as <em>Taken</em>; pick one to follow the thief.</li>
+      <li><strong>Address poisoning</strong> — if the address you paid looks like one you paid before (the same
+        first and last characters) and it had put a worthless transfer into your history shortly before, the answer
+        says so: you copied a poisoned address from your history. Only your own history of the week before is
+        read. Before you paste an address, check every character — not only the first and the last.</li>
+      <li><strong>Frozen by Tether or Circle?</strong> — where USDT or USDC is still at an address, the page reads
+        the issuer's own blacklist on the chain and says whether it is already frozen, or that you should write to
+        the issuer, with its contact.</li>
       <li><strong>Through swaps and conversions</strong> — money that went into a swap, a withdrawal from a lending
         pool, or an unwrapping (WETH to ETH) came back as something else in the same transaction. The page reads
         what each address gained and lost in it and follows on in what came out: up to three such points, each a
@@ -154,6 +162,11 @@
         hands, and time matters.</li>
       <li><strong>Report it to the police</strong>, and give them the saved file.</li>
     </ul>
+
+    <div class="warn"><p><strong>Beware of "recovery" offers.</strong> Nobody can get crypto back for an upfront
+      fee. Anyone who writes to you after a loss — on social media, by mail, pretending to be a lawyer, an exchange
+      or the police — offering to recover it is the next scam. Only the exchange where the money landed, the issuer
+      of USDT or USDC, and the police can freeze it.</p></div>
 
     <h2 id="export">5 · Export for analysis</h2>
     <p>Under the answer, <strong>Export for analysis</strong> gives one zip file for the tools investigators and
