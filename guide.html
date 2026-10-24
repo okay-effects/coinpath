@@ -145,7 +145,26 @@
       <li><strong>Report it to the police</strong>, and give them the saved file.</li>
     </ul>
 
-    <h2 id="settings">5 · Settings: keys of your own</h2>
+    <h2 id="export">5 · Export for analysis</h2>
+    <p>Under the answer, <strong>Export for analysis</strong> gives one zip file for the tools investigators and
+      analysts use. Inside:</p>
+    <ul>
+      <li><strong>edges.csv</strong> — every transfer on the path: from, to, amount, time, transaction, and the
+        part the method counted as your money; <strong>nodes.csv</strong> — every address: what was found there,
+        its name and where to check it, whether it is on the sanctions list, totals in and out. Excel, R, Python,
+        Maltego and i2 open them as they are.</li>
+      <li><strong>trace.graphml</strong> — the same as a graph for Gephi, Cytoscape or yEd; <strong>neo4j/</strong>
+        — files and a script to load it into Neo4j.</li>
+      <li><strong>features.csv</strong> and its two companions — one row per address with numbers a model can learn
+        from, in the shape of the Elliptic dataset researchers use.</li>
+      <li><strong>meta.json</strong> — the trace's method and pinned block, and the type of every column;
+        <strong>trace.json</strong> — the saved trace; <strong>README.txt</strong> — what each file is.</li>
+    </ul>
+    <p class="muted">Every table has a header row, times in ISO 8601 (UTC), a dot for decimals and no thousands
+      separator, so no tool has to guess. Examples that read an export in R and in Python are in Coinpath's
+      repository (<code>analysis/</code>).</p>
+
+    <h2 id="settings">6 · Settings: keys of your own</h2>
     <p>Some providers answer faster, or at all, with a free key of your own; some people run their own node. Open
       <strong>Settings</strong> at the top of the page and fill in only what you have. Your keys stay in this browser
       only, and each is sent only to its own provider; a saved trace never contains one. <strong>Forget my
@@ -179,7 +198,7 @@
     <p class="muted">Setting an address of your own (an instance, a node, an RPC URL) reloads the page once, so the
       page may ask it: the page lets itself talk only to the providers it knows and the addresses you set.</p>
 
-    <h2>6 · Privacy</h2>
+    <h2>7 · Privacy</h2>
     <p>This page runs in your browser. It asks the public explorers of the chain you chose (Blockscout, Esplora,
       TronGrid) about your transaction and the addresses it follows; nothing else of ours sits in between. The
       names of addresses come as static files, asked by a short code computed from the address, so the address
