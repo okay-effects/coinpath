@@ -143,11 +143,46 @@
       <li><strong>Report it to the police</strong>, and give them the saved file.</li>
     </ul>
 
-    <h2>5 · Privacy</h2>
+    <h2 id="settings">5 · Settings: keys of your own</h2>
+    <p>Some providers answer faster, or at all, with a free key of your own; some people run their own node. Open
+      <strong>Settings</strong> at the top of the page and fill in only what you have. Your keys stay in this browser
+      only, and each is sent only to its own provider; a saved trace never contains one. <strong>Forget my
+      keys</strong> removes them all.</p>
+    <table>
+      <tr><th>Setting</th><th>What it does</th><th>Where to get it (free)</th></tr>
+      <tr><td>Blockscout PRO API key</td><td>Reads every EVM chain through Blockscout's PRO API with your key.</td>
+        <td><a href="https://dev.blockscout.com" target="_blank" rel="noopener noreferrer">dev.blockscout.com</a>
+        — sign in, create a key (it starts <code>proapi_</code>)</td></tr>
+      <tr><td>Blockscout instances of your own</td><td>One a line, <code>celo = https://…</code>: that chain is read
+        from your instance. The chain's word is on the Settings screen under the
+        field.</td><td>Your own Blockscout</td></tr>
+      <tr><td>Esplora URL (Bitcoin)</td><td>Bitcoin is read from your node instead of blockstream.info and
+        mempool.space.</td><td>Your own <a href="https://github.com/mempool/mempool" target="_blank"
+        rel="noopener noreferrer">mempool</a> or Esplora node</td></tr>
+      <tr><td>TronGrid API key</td><td>Tron is read with your key: fewer "not now" waits.</td><td><a
+        href="https://www.trongrid.io/register" target="_blank" rel="noopener noreferrer">trongrid.io</a> — sign up,
+        create an API key</td></tr>
+      <tr><td>Blockfrost project id</td><td>Cardano (when it is offered).</td><td><a href="https://blockfrost.io"
+        target="_blank" rel="noopener noreferrer">blockfrost.io</a> — sign up, add a Cardano mainnet
+        project</td></tr>
+      <tr><td>Solana RPC URL</td><td>Solana (when it is offered), through your node's address with its key.</td>
+        <td><a href="https://www.helius.dev" target="_blank" rel="noopener noreferrer">Helius</a>, <a
+        href="https://www.quicknode.com" target="_blank" rel="noopener noreferrer">QuickNode</a> or <a
+        href="https://www.alchemy.com" target="_blank" rel="noopener noreferrer">Alchemy</a> — a free plan's
+        mainnet URL</td></tr>
+      <tr><td>Etherscan V2 API key</td><td>Chains read through Etherscan (when they are offered).</td><td><a
+        href="https://etherscan.io/apis" target="_blank" rel="noopener noreferrer">etherscan.io/apis</a> — sign up,
+        add an API key</td></tr>
+    </table>
+    <p class="muted">Setting an address of your own (an instance, a node, an RPC URL) reloads the page once, so the
+      page may ask it: the page lets itself talk only to the providers it knows and the addresses you set.</p>
+
+    <h2>6 · Privacy</h2>
     <p>This page runs in your browser. It asks the public explorers of the chain you chose (Blockscout, Esplora,
       TronGrid) about your transaction and the addresses it follows; nothing else of ours sits in between. The
       names of addresses come as static files, asked by a short code computed from the address, so the address
-      itself is not sent for them. Nothing is kept unless you save a file.</p>
+      itself is not sent for them. Nothing is kept unless you save a file — or set a key on Settings, which stays in
+      this browser.</p>
 
     <p><a class="start" href="./">Start</a></p>
   </main>
