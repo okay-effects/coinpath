@@ -75,10 +75,12 @@
 
     <h2>2 · The form, field by field</h2>
     <h3>Chain</h3>
-    <p>The network you sent on. For a Bitcoin address (starting <code>bc1</code>, <code>1</code> or <code>3</code>)
-      or a Tron address (starting <code>T</code>) the page knows the chain by itself. For anything starting
-      <code>0x</code> it cannot tell Ethereum from Base, Arbitrum, Optimism, Polygon or World Chain: pick the one
-      you sent on. For a 64-character hash with no <code>0x</code>, pick Bitcoin or Tron.</p>
+    <p>The network you sent on. The common ones come first, the rest in alphabetical order. For a Bitcoin address
+      (starting <code>bc1</code>, <code>1</code> or <code>3</code>), a Litecoin address (<code>ltc1</code>,
+      <code>L</code> or <code>M</code>) or a Tron address (starting <code>T</code>) the page knows the chain by
+      itself. For anything starting <code>0x</code> it cannot tell one EVM chain from another (Ethereum, Base,
+      Arbitrum, Celo, zkSync Era and the others on the list): pick the one you sent on. For a 64-character hash with
+      no <code>0x</code>, pick Bitcoin, Litecoin or Tron.</p>
     <h3>Transaction hash or address</h3>
     <p>Paste the hash of your payment, or the address you paid. The page says what it recognised on the next
       screen; if what you pasted matches no format, it says so under the field.</p>
