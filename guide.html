@@ -93,7 +93,9 @@
     <h3>Follow</h3>
     <p>Which money to follow. <strong>Usual</strong> follows USDT on Tron and the chain's own coin everywhere else
       (ETH, BTC, POL). Choose <strong>The coin</strong> or <strong>USDT</strong> when that is what you sent — for
-      example, USDT on Ethereum, or TRX on Tron.</p>
+      example, USDT on Ethereum, or TRX on Tron. <strong>Anything it moved</strong> lists every transfer in the
+      transaction, whatever the token — use it for a token that is neither (a staked or wrapped token a drainer
+      took).</p>
     <h3>Method</h3>
     <p>When your money arrives at an address that already holds other money, and that address then sends some on,
       how much of what it sent was yours? Nobody can know; each method is a rule, and the answer says which one it
@@ -122,6 +124,14 @@
           <li><strong>is still at</strong> an address that has not sent it on.</li>
         </ul>
       </li>
+      <li><strong>A theft by approval</strong> — if your tokens were taken by a transaction you did not send (you
+        signed an approval or a "permit" on a fake site), the answer says so first: who sent that transaction, the
+        contract it called, the spender your approval named, and anything else it took from you. Give your own
+        address and such transfers are listed as <em>Taken</em>; pick one to follow the thief.</li>
+      <li><strong>Through swaps and conversions</strong> — money that went into a swap, a withdrawal from a lending
+        pool, or an unwrapping (WETH to ETH) came back as something else in the same transaction. The page reads
+        what each address gained and lost in it and follows on in what came out: up to three such points, each a
+        few steps further.</li>
       <li><strong>Small transfers</strong> — each under 1% of what reached its sender — are shown, not followed;
         the first line gives their sum.</li>
       <li><strong>Not followed past … (hop limit, budget)</strong> and <strong>not accounted for</strong> — the
