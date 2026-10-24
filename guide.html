@@ -76,14 +76,19 @@
 
     <h2>2 · The form, field by field</h2>
     <h3>Chain</h3>
-    <p>The network you sent on. The common ones come first, the rest in alphabetical order. For a Bitcoin address
-      (starting <code>bc1</code>, <code>1</code> or <code>3</code>), a Litecoin address (<code>ltc1</code>,
-      <code>L</code> or <code>M</code>) or a Tron address (starting <code>T</code>) the page knows the chain by
-      itself. For anything starting <code>0x</code> it cannot tell one EVM chain from another (Ethereum, Base,
-      Arbitrum, Celo, zkSync Era and the others on the list): pick the one you sent on. For a 64-character hash with
-      no <code>0x</code>, pick Bitcoin, Litecoin, Tron or Cardano. Some chains say <em>needs a free key
-      (Settings)</em>: Solana, Cardano and the chains read through Etherscan (Linea, Sonic, Berachain, HyperEVM, Sei,
-      Monad, Taiko, Abstract). Choosing one tells you where to get the key; see <a href="#settings">Settings</a>.</p>
+    <p><strong>Detect automatically</strong> is the default: leave it, and the page finds the chain itself. A
+      Bitcoin address (<code>bc1</code>, <code>1</code>, <code>3</code>), a Litecoin address (<code>ltc1</code>,
+      <code>L</code>, <code>M</code>), a Tron address (<code>T</code>), a Cardano address (<code>addr1</code>) and a
+      Solana address or signature tell the chain by their shape. For the rest the page asks each chain at once: a
+      transaction hash starting <code>0x</code> is looked for on every EVM chain it can read, a 64-character hash
+      without <code>0x</code> on Bitcoin, Litecoin and Tron. Normally exactly one has it, and the answer says
+      "Found on …". If several do (chains that share their early history, like Ethereum and Ethereum Classic), you
+      pick. An <code>0x</code> address exists on every EVM chain, so the page shows where it has payments —
+      "Ethereum (12), Base (3)" — and you pick. A chain that does not answer within ten seconds, or asks the page to
+      wait, is listed as not checked.</p>
+    <p>You can still choose the chain by hand; your choice wins. The common chains come first, the rest in
+      alphabetical order. Chains marked <em>needs a free key (Settings)</em> — Solana, Cardano and the chains read
+      through Etherscan — are looked at only once their key is set; see <a href="#settings">Settings</a>.</p>
     <h3>Transaction hash or address</h3>
     <p>Paste the hash of your payment, or the address you paid. The page says what it recognised on the next
       screen; if what you pasted matches no format, it says so under the field.</p>
