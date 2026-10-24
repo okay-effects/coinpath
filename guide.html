@@ -81,11 +81,11 @@
       <code>L</code>, <code>M</code>), a Tron address (<code>T</code>), a Cardano address (<code>addr1</code>) and a
       Solana address or signature tell the chain by their shape. For the rest the page asks each chain at once: a
       transaction hash starting <code>0x</code> is looked for on every EVM chain it can read, a 64-character hash
-      without <code>0x</code> on Bitcoin, Litecoin and Tron. Normally exactly one has it, and the answer says
-      "Found on …". If several do (chains that share their early history, like Ethereum and Ethereum Classic), you
-      pick. An <code>0x</code> address exists on every EVM chain, so the page shows where it has payments —
-      "Ethereum (12), Base (3)" — and you pick. A chain that does not answer within ten seconds, or asks the page to
-      wait, is listed as not checked.</p>
+      without <code>0x</code> on Bitcoin and Tron, then Litecoin if neither has it. A transaction hash is unique, so
+      the first chain that has it is used — usually in under a second — and the answer says "Found on …". An
+      <code>0x</code> address exists on every EVM chain, so the page shows where it has payments — "Ethereum (12),
+      Base (3)" — and you pick. When nothing is found, the page lists the chains it checked and any that did not
+      answer within ten seconds or asked it to wait.</p>
     <p>You can still choose the chain by hand; your choice wins. The common chains come first, the rest in
       alphabetical order. Chains marked <em>needs a free key (Settings)</em> — Solana, Cardano and the chains read
       through Etherscan — are looked at only once their key is set; see <a href="#settings">Settings</a>.</p>
