@@ -80,7 +80,9 @@
       <code>L</code> or <code>M</code>) or a Tron address (starting <code>T</code>) the page knows the chain by
       itself. For anything starting <code>0x</code> it cannot tell one EVM chain from another (Ethereum, Base,
       Arbitrum, Celo, zkSync Era and the others on the list): pick the one you sent on. For a 64-character hash with
-      no <code>0x</code>, pick Bitcoin, Litecoin or Tron.</p>
+      no <code>0x</code>, pick Bitcoin, Litecoin, Tron or Cardano. Some chains say <em>needs a free key
+      (Settings)</em>: Solana, Cardano and the chains read through Etherscan (Linea, Sonic, Berachain, HyperEVM, Sei,
+      Monad, Taiko, Abstract). Choosing one tells you where to get the key; see <a href="#settings">Settings</a>.</p>
     <h3>Transaction hash or address</h3>
     <p>Paste the hash of your payment, or the address you paid. The page says what it recognised on the next
       screen; if what you pasted matches no format, it says so under the field.</p>
@@ -162,17 +164,17 @@
       <tr><td>TronGrid API key</td><td>Tron is read with your key: fewer "not now" waits.</td><td><a
         href="https://www.trongrid.io/register" target="_blank" rel="noopener noreferrer">trongrid.io</a> — sign up,
         create an API key</td></tr>
-      <tr><td>Blockfrost project id</td><td>Cardano (when it is offered).</td><td><a href="https://blockfrost.io"
+      <tr><td>Blockfrost project id</td><td>Cardano.</td><td><a href="https://blockfrost.io"
         target="_blank" rel="noopener noreferrer">blockfrost.io</a> — sign up, add a Cardano mainnet
         project</td></tr>
-      <tr><td>Solana RPC URL</td><td>Solana (when it is offered), through your node's address with its key.</td>
+      <tr><td>Solana RPC URL</td><td>Solana, through your node's address with its key.</td>
         <td><a href="https://www.helius.dev" target="_blank" rel="noopener noreferrer">Helius</a>, <a
         href="https://www.quicknode.com" target="_blank" rel="noopener noreferrer">QuickNode</a> or <a
         href="https://www.alchemy.com" target="_blank" rel="noopener noreferrer">Alchemy</a> — a free plan's
         mainnet URL</td></tr>
-      <tr><td>Etherscan V2 API key</td><td>Chains read through Etherscan (when they are offered).</td><td><a
+      <tr><td>Etherscan V2 API key</td><td>The chains read through Etherscan.</td><td><a
         href="https://etherscan.io/apis" target="_blank" rel="noopener noreferrer">etherscan.io/apis</a> — sign up,
-        add an API key</td></tr>
+        add an API key. One key covers Linea, Sonic, Berachain, HyperEVM, Sei, Monad, Taiko and Abstract</td></tr>
     </table>
     <p class="muted">Setting an address of your own (an instance, a node, an RPC URL) reloads the page once, so the
       page may ask it: the page lets itself talk only to the providers it knows and the addresses you set.</p>
