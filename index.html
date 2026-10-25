@@ -104,6 +104,20 @@
       body form.okay-form[data-action="follow"] fieldset { grid-template-columns: 1fr; }
       .okay-face > div:has(form[data-action="follow"]) { grid-template-columns: 1fr; }
     }
+    /* A PHONE: an address breaks where it must, so a table never widens the page */
+    @media (max-width: 640px) { body .okay-table { table-layout: fixed; }
+      body .okay-table { font-size: 0.8em; }
+      body .okay-table td, body .okay-table th { overflow-wrap: anywhere; padding: 8px 5px; letter-spacing: 0; } }
+    /* THE FLOW'S MARKS (the picture says what each shape is; the page says its colour) */
+    .okay-picture-frame { overflow-x: auto; }
+    .okay-mark-start { color: #b54708; }
+    .okay-mark-exchange { color: #0e7c66; }
+    .okay-mark-mixer { color: #c92a2a; }
+    .okay-mark-bridge { color: #3b5bdb; }
+    .okay-mark-service { color: #5f3dc4; }
+    .okay-mark-holds { color: #e8590c; }
+    .okay-mark-notfollowed { color: #868e96; }
+    .okay-mark-followed { color: #74a9a0; }
   </style>
 </head>
 <body>
